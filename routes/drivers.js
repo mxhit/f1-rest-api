@@ -46,7 +46,7 @@ router.patch('/updateDriver/:id', async (req, res) => {
         const driver = await Driver.findById(req.params.id);
 
         if (driver == null) {
-            return res.status(404).send({message: 'Update failed because Driver not could not be found'});
+            return res.status(404).send({message: 'Update failed because Driver could not be found'});
         }
 
         if (req.body.name != null) {
@@ -73,7 +73,7 @@ router.delete('/deleteDriver/:id', async (req, res) => {
         const driver = await Driver.findById(req.params.id);
 
         if (driver == null) {
-            return res.status(404).send({message: 'Update failed because Driver not could not be found'});
+            return res.status(404).send({message: 'No such driver exists'});
         }
 
         await driver.delete();

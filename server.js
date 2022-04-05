@@ -21,3 +21,6 @@ app.get('/', (req, res) => {
 
 const driverRouter = require('./routes/drivers');
 app.use('/drivers', driverRouter);
+
+const teamRouter = require('./routes/teams');
+app.use('/teams', teamRouter);
